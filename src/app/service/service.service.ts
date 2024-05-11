@@ -14,14 +14,14 @@ interface Post {
 export class ServiceService {
   post$!: Observable<any[]>;
 
-  constructor(private fire: Firestore) { }
+  constructor(private fire: Firestore) {}
 
-  async getData() {
-    const itemCollection = await collection(this.fire, 'notes');
-    this.post$ = collectionData(itemCollection);
-    this.post$.subscribe((item: any) => {
-      console.log('ie', item)
-      return item;
-    })
+  getData(){
+    const itemCollection = collection(this.fire, 'notes');
+    return collectionData(itemCollection);
+    // this.post$.subscribe((item: any) => {
+    //   console.log('ie', item)
+    //   return item;
+    // })
   }
 }

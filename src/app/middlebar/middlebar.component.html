@@ -1,3 +1,6 @@
-<div *ngfor="let post of posts">
-    <li>{{post.body}}</li>
+<div *ngFor="let post of posts" class="card">
+  <li>{{ post.body | json }}</li>
+  <p>{{post.createdAt}}</p>
+  <img src="{{post.imageUrl}}" alt="">
+  <p>{{posts.likes}}</p>
 </div>
