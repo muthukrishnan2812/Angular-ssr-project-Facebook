@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service/service.service';
-import { Observable } from 'rxjs';
+import { Observable, timestamp } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { log } from 'node:console';
 
 @Component({
   selector: 'app-middlebar',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './middlebar.component.scss'
 })
 export class MiddlebarComponent implements OnInit {
-posts:any;
+posts:any
   constructor(private service:ServiceService) { }
 
   ngOnInit(): void {
@@ -25,6 +26,8 @@ posts:any;
       this.posts=item
       console.log('post',this.posts);
     })
-    
+  }
+  formatTimestamp(timestamp: Date): string {
+    return this.service.formatTimestamp(timestamp);
   }
 }

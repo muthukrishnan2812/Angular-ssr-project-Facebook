@@ -5,14 +5,10 @@ import { MiddlebarComponent } from './middlebar/middlebar.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-    {
-        path:"",
-        component:AppComponent
-    },
-    {
-        path:"nav-bar",
-        component:NavbarComponent
-    },
+    // {
+    //     path:"",
+    //     component:AppComponent
+    // },
     {
         path:"middlebar",
         component:MiddlebarComponent
