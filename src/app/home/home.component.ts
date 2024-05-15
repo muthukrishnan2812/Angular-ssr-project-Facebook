@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { LeftbarComponent } from '../leftbar/leftbar.component';
 import { RightbarComponent } from '../rightbar/rightbar.component';
 import { MiddlebarComponent } from '../middlebar/middlebar.component';
@@ -12,5 +10,4 @@ import { MiddlebarComponent } from '../middlebar/middlebar.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
 }

@@ -69,6 +69,12 @@ export default function contentSecurityPolicy(nonce: string) {
         `'nonce-${nonce}'`, 
         'https://apis.google.com', 
         ...trustedSources 
+      ],
+      imageSrc:[
+        `'nonce-${nonce}'`,
+        'https://apis.google.com',
+
+        ...trustedSources
       ]
     }
   });

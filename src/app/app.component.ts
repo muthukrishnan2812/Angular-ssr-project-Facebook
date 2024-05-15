@@ -12,11 +12,4 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent   {
-  title = 'ssr-project';
-  post!:Observable<any[]>
-  http=inject(HttpClient)
-
-
-
-}
+export class AppComponent   {}

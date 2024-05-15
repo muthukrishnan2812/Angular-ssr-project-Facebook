@@ -114,6 +114,7 @@
 .story-2 {
     height: auto;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .modal {
@@ -147,6 +148,7 @@
 .firstPost {
     width: 100%;
     background-color: #fff;
+    margin-bottom: 20px;
 
     // display: flex;
     h6 {
@@ -190,6 +192,10 @@
     width: 40px;
     border-radius: 50px;
 }
+.card-img{
+    width: 100%;
+    padding: 15px;
+}
 
 @media (max-width:800px) {
     .ii {
@@ -197,7 +203,7 @@
     }
 
     .center {
-        width: 100%;
+        width: fit-content;
         margin: 0;
         overflow-x: scroll;
     }
@@ -226,7 +232,7 @@
     
 
     .firstPost {
-        width: 66%;
+        width: 80%;
         margin: 0 auto;
         margin-left: 0;
         display: flex;
@@ -256,6 +262,7 @@
     .story-2 {
         width: 100%;
         margin-left: 0;
+        margin-bottom: 20px;
     }
 
     .story_update {
@@ -302,4 +309,13 @@
     input{
         height: 50px;
     }
+}
+.likeBorderBox{
+    justify-content: space-around;
+    font-size: 15px;
+    display: flex;
+    border: 2px solid lightgray;
+    width: -webkit-fill-available;
+    padding: 10px;
+    margin: 10px;
 }
