@@ -109,7 +109,7 @@
       <i class="bi bi-chat i " data-bs-toggle="modal" data-bs-target="#commandModal"> Comment</i>
       <i class="bi bi-share i"> Share</i>
     </div>
-    <ul class="list-group" *ngIf="post.command">
+    <ul class="list-group command" *ngIf="post.command">
       <li class="list-group-item "><strong>Muthukrishnan:</strong>&nbsp;&nbsp;{{post.command}}</li>
     </ul>
     <div class="modal fade command" id="commandModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -131,6 +131,4 @@
       </div>
     </div>
   </div>
-
-
 </div>

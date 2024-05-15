@@ -14,6 +14,15 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## SSR - Server Side Rendering
+Run `npm run serve:ssr:ssr-project` to run the project.
+
+`sample-output`
+![alt text](<Screenshot from 2024-05-15 15-55-43.png>)
+
+`localhost:4000/home`
+![alt text](<Screenshot from 2024-05-15 15-58-16.png>)
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
