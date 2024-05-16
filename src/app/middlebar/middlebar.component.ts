@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { FormsModule } from '@angular/forms';
 
-
-
 @Component({
   selector: 'app-middlebar',
   imports: [CommonModule, HttpClientModule, FormsModule],
@@ -23,11 +21,7 @@ export class MiddlebarComponent implements OnInit {
   constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
-    this.service.getData().subscribe((item: any) => {
-      console.log('i', item)
-      this.posts = item
-      console.log('post', this.posts);
-    })
+    this.posts = this.service.getData();
   }
   formatTimestamp(timestamp: Date): string {
     return this.service.formatTimestamp(timestamp);
@@ -50,6 +44,5 @@ export class MiddlebarComponent implements OnInit {
   async toggleLike(postId:any){
     await this.service.toggleLike(postId)
   }
-  
 
 }

@@ -88,7 +88,7 @@
   </div>
 
 
-  <div *ngFor="let post of posts" class="firstPost card">
+  <div *ngFor="let post of posts | async" class="firstPost card">
     <div class="userProfile d-flex mx-3 my-3">
       <img src="assets/images/muthu.jpg" alt="profilepic" class="postImg" />
       <div class="mx-3">

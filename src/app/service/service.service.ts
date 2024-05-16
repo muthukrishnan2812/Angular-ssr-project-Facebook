@@ -22,7 +22,7 @@ export class ServiceService {
   commandText: string = '';
   constructor(private fire: Firestore, private storage: Storage) { }
 
-  getData() {
+  getData():Observable<any[]> {
     const itemCollection = collection(this.fire, 'notes');
     const itemQuery = query(itemCollection, orderBy('createdAt', 'desc'));
     return collectionData(itemQuery, { idField: 'id' })
@@ -136,6 +136,5 @@ export class ServiceService {
       await updateDoc(postReff, { likes: postData.likes })
       console.log(postReff ? 'post liked' : 'unliked successfully');
     }
-
   }
 }
