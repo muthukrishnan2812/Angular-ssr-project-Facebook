@@ -1,9 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData, orderBy, query } from '@angular/fire/firestore';
-import { deleteDoc, doc, updateDoc, getDoc, DocumentSnapshot, DocumentData } from 'firebase/firestore';
-import { Storage } from '@angular/fire/storage';
-import { ref, getStorage, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { Observable } from 'rxjs';
+import { deleteDoc, doc, updateDoc, getDoc, DocumentSnapshot, DocumentData, CollectionReference } from 'firebase/firestore';
+import { Storage} from '@angular/fire/storage';
+import { ref, getStorage, uploadBytesResumable, getDownloadURL,FirebaseStorage, listAll } from 'firebase/storage';
+import { Observable, from, map } from 'rxjs';
 interface Post {
   id: string, // Assuming the ID is a string
   body: string,

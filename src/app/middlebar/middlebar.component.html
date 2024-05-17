@@ -70,9 +70,9 @@
                 <span> <i class="bi bi-geo-alt-fill text-danger"></i></span>
                 <span><i class="bi bi-file-earmark-gif text-success"></i></span>
                 <span><i class="bi bi-three-dots"></i></span>
-                <img [src]="imageUrl" alt="Preview Image" id="previewImage" style="display: none;" class="preview"
-                  *ngIf="imageUrl">
-
+                @if (imageUrl) {
+                <img [src]="imageUrl" alt="Preview Image" id="previewImage" style="display: none;" class="preview">
+                }
               </div>
             </div>
             <div class="modal-footer">
@@ -87,8 +87,8 @@
     </div>
   </div>
 
-
-  <div *ngFor="let post of posts | async" class="firstPost card">
+  @for (post of (posts|async) ; track post.id) {
+  <div class="firstPost card">
     <div class="userProfile d-flex mx-3 my-3">
       <img src="assets/images/muthu.jpg" alt="profilepic" class="postImg" />
       <div class="mx-3">
@@ -105,13 +105,17 @@
       <img src="{{ post.imageUrl }}" alt="" class="card-img" />
     </div>
     <div class="my-3 likeBorderBox">
-      <i class="i" [ngClass]="post.likes ? 'bi bi-hand-thumbs-up-fill' : 'bi bi-hand-thumbs-up'" (click)="toggleLike(post.id)"> Like</i>
+      <i class="i" [ngClass]="post.likes ? 'bi bi-hand-thumbs-up-fill' : 'bi bi-hand-thumbs-up'"
+        (click)="toggleLike(post.id)"> Like</i>
       <i class="bi bi-chat i " data-bs-toggle="modal" data-bs-target="#commandModal"> Comment</i>
       <i class="bi bi-share i"> Share</i>
     </div>
-    <ul class="list-group command" *ngIf="post.command">
+    @if (post.command) {
+    <ul class="list-group command">
       <li class="list-group-item "><strong>Muthukrishnan:</strong>&nbsp;&nbsp;{{post.command}}</li>
     </ul>
+    }
+
     <div class="modal fade command" id="commandModal" tabindex="-1" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -131,4 +135,8 @@
       </div>
     </div>
   </div>
+  }
+  @empty {
+  none of the data
+  }
 </div>
