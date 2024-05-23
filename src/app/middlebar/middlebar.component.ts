@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { log } from 'console';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-middlebar',
-  imports: [CommonModule, HttpClientModule, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './middlebar.component.html',
   styleUrl: './middlebar.component.scss',
   standalone: true,
 })
 export class MiddlebarComponent implements OnInit {
-  posts!: Observable<any>
+  posts: any
   imageUrl: string[] = []
   body: string = ''
   commandText: string = '';
@@ -23,10 +24,10 @@ export class MiddlebarComponent implements OnInit {
   constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
-    this.posts = this.service.getData();
-    console.log(this.posts);//getting data in observable format
-    this.posts.subscribe((item: any) => {
-      console.log(item);// getting data in object format
+    this.service.getData().subscribe((item:any)=>{
+      this.posts=item;
+      console.log(this.posts);
+      
     })
   }
   formatTimestamp(timestamp: Date): string {
