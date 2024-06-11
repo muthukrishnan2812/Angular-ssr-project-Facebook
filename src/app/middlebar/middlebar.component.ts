@@ -24,10 +24,9 @@ export class MiddlebarComponent implements OnInit {
   constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
-    this.service.getData().subscribe((item:any)=>{
-      this.posts=item;
+    this.service.getData().subscribe((item: any) => {
+      this.posts = item;
       console.log(this.posts);
-      
     })
   }
   formatTimestamp(timestamp: Date): string {
@@ -51,5 +50,4 @@ export class MiddlebarComponent implements OnInit {
   async toggleLike(postId: any) {
     await this.service.toggleLike(postId)
   }
-
 }
